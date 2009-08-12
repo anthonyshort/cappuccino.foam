@@ -1,137 +1,67 @@
 /*
-	@theme Cappuccino 
-	@override-placeholders html, css
+	@theme Cappuccino
+	@override-placeholders ruby, css, html, php
+  	@author Anthony Short - Based on the Railcasts theme
+  	
+  	Colors
+  		- #ddd text
+  		- #222 background
+  		- #555 Dark grey (Comments)
+  		- rgba(251, 199, 111, 1.00) Yellow
+  		- rgba(112, 155, 190, 1.00) Blue
+  		- rgba(164, 194, 97, 1.00) Red
 */
 
-@base {
-	color:#7f7b67;
-	background-color:#272620;
+@base 
+{
+	color: #999;
+	background-color: #222;
 	insertion-point-color: #fff;
-	selection-background-color: #000;
-}
-
-tag, source, sourcecode {
-	spell-check: disabled; 
+	selection-background-color: #333;
 }
 
 tag, 
-string > punctuation, 
-attribute-name
-{ color:#cda984; }
+source, 
+sourcecode,
+css
+{ spell-check: disabled; }
 
-string { color:rgb(242,235,199);}
-entity { }
+processing-instruction { color:#aeaeae; }
 
-comment, 
-comment>punctuation, 
-tag.doctype, 
-tag.doctype > *, 
-tag.doctype > string.quoted 
-{ color: #aaa; }
+/* Yellow */
+selector,
+php builtin_function name
+{ color: rgba(251, 199, 111, 1.00); }
 
-string double, string single{ 
-color:#8af299;
-}
+/* Blue */
+property-name,
+tag,
+variable
+{ color: rgba(112, 155, 190, 1.00); }
 
+/* Green */
+property-value
+{ color: rgba(164, 194, 97, 1.00); }
 
-/* 
-	ExpressionEngine Tags
-*/
+/* Red */
+php php.begin *,
+php keyword.modifier
+{ color: rgba(251, 90, 90, 1.00); }
 
-ee.tag>name, 
-ee.tag > punctuation,
-ee.tag attribute-name { color:#9ecffd; }
+/* Orange */
+keyword.important,
+control 
+{ color: rgba(200, 121, 54, 1.00); }
 
-ee.tag.open > name > string {color:#8af299; }
+/* Grey */
+comment,
+tag.doctype
+{ color: #555; }
 
-ee.tag.single,
-ee.tag.single > name, 
-ee.tag.single > punctuation, 
-ee.tag.single > name > attribute-name { color:#8af299;}
+/* Light Grey */
+php balanced
+{ color: #999;}
 
-ee.tag.self-closing,
-ee.tag.self-closing > name, 
-ee.tag.self-closing > punctuation, 
-ee.tag.self-closing > name > attribute-name { color:#8af299;}
-
-ee.tag.conditional { color:#9ecffd; }
-/* 
-	HTML
-*/
-
-/* None just yet :) */
-
-/* 
-	CSS
-*/
-
-selector.css { color:#7f7b67; }
-css property-list > property-value { color:#8af299; }
-css property-list > property-name { color:#9ecffd; }
-
-
-/* 
-	JS
-*/
-
-
-latex.function function - parameter, latex.keyword {
-	color:;
-}
-
-string.quoted {
-	color: ;
-}
-
-string.quoted > escape {
-	background-color: #e8ffd5;
-	font-weight: bold;
-}
-
-variable {
-	color: ;
-}
-
-variable>punctuation {
-	color: ;
-}
-
-operator {
-	color: ;
-}
-
-open-bracket, close-bracket {
-	color: ;
-}
-
-support.function, function-call {
-	color: ;
-	font-weight: boldd;
-}
-
-keyword.control, storage.type {
-	color:;
-}
-
-function > name {
-	color:;
-	font-weight: bold;
-}
-
-js.embedded {
-	color: ;
-}
-
-constant.numeric, constant.language {
-	color: ;
-	background-color: #f3f2ff;
-}
-
-invalid {
-	background-color: #f93232;
-	color: ;
-}
-
-textile > header {
-	font-weight: bold;
-}
+/* Off-white */
+string 
+{ color: rgba(164, 194, 97, 1.00); } 
